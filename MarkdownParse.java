@@ -13,7 +13,6 @@ public class MarkdownParse {
         int currentIndex = 0;
         if (markdown.contains("[") == true && markdown.contains("]") == true && markdown.contains("(") == true && markdown.contains(")") == true) {
             while(currentIndex < markdown.length()) {
-                System.out.println(currentIndex);
                 int openBracket = markdown.indexOf("[", currentIndex);
                 int closeBracket = markdown.indexOf("]", openBracket);
                 int openParen = markdown.indexOf("(", closeBracket);
