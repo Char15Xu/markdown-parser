@@ -20,8 +20,17 @@ public class MarkdownParse {
                 toReturn.add(markdown.substring(openParen + 1, closeParen));
                 currentIndex = closeParen + 1;  
             }
-        
         }
+        // If the link does not have brackets
+        else if (markdown.contains("(") == true && markdown.contains(")") == true) {
+            while(currentIndex < markdown.length()) {
+                int firstParen = markdown.indexOf("(", currentIndex);
+                int secondParen = markdown.indexOf(")", firstParen);
+                toReturn.add(markdown.substring(firstParen + 1, secondParen));
+                currentIndex = secondParen + 1;
+            }
+        } 
+        // To account for files with no links in them
         else {
             toReturn.add("A link was not found in this file.");
         }
