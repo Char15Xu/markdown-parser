@@ -21,7 +21,7 @@ public class MarkdownParse {
                 int closeParen = markdown.indexOf(")", openParen);
                 
                 currentIndex = closeParen + 1; 
-                
+
                 if(toReturn.contains(markdown.substring(openParen + 1, closeParen))){
                     if(record.contains(currentIndex)){
                         break;
